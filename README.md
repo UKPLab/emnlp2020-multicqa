@@ -42,7 +42,9 @@ Our source code consists of two components:
 
 
 We also provide several pre-trained models:
+ * [MultiCQA bert-base](https://public.ukp.informatik.tu-darmstadt.de/rueckle/multicqa/checkpoints/MultiCQA-bert-base.zip)(from our table 4)
+ * [MultiCQA bert-large](https://public.ukp.informatik.tu-darmstadt.de/rueckle/multicqa/checkpoints/MultiCQA-bert-large.zip) 
+ * [MultiCQA roberta-large](https://public.ukp.informatik.tu-darmstadt.de/rueckle/multicqa/checkpoints/MultiCQA-roberta-large.zip)
  * [A BERT-base model containing all adapters](https://public.ukp.informatik.tu-darmstadt.de/rueckle/multicqa/checkpoints/bert-base-all-adapters.zip) (e.g., useful for AdapterFusion)
- * (More soon)
  
 Our adapters are also available at [AdapterHub.ml](https://adapterhub.ml/explore/sts/stackexchange/).
