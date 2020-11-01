@@ -1,0 +1,42 @@
+# example value = a possible value; no default exists
+# default value = the default value if no other value is entered
+
+evaluation-module: experiment.qa_pointwise.evaluation.evaluation_bert
+
+logger:
+  level: INFO
+
+## Global config for all components
+global:
+  # Text token number is limited to these values
+  question_length: 150 # example value
+  answer_length: 150 # example value
+
+  experiment_path: ./output_path  # this is the output path of the model trained with run_experiment!
+  evaluation_output: ./eval_output_path # where to log the output
+
+## Config for the datasets
+data:
+    # Module path for the data reader
+  - data-module: experiment.qa.data.stackexchange_questions.reader # example value
+    lowercased: true
+    path: datasets/academia.stackexchange.com
+    # Remove unneeded splits from the list
+    splits:
+      - train
+      - dev
+
+    # Adapter name(s) to use during evaluation for this dataset.
+    # Remove if model does not have adapters
+    adapter: [superuser, travel, workplace, writers] # example value
+
+  # Add as many datasets as needed
+  - ...
+
+## Config for dev/ test evaluation
+evaluation:
+  skip: False #default
+
+  batchsize: 32 # example value
+  # Measure used to decide the best epoch
+  primary_measure: accuracy # default

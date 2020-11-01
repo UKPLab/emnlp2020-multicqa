@@ -1,0 +1,35 @@
+matrix:
+data:
+  - data-module: experiment.qa.data.insuranceqa.tsv
+    train_data: [./datasets/LAS/cooking]
+    lowercased: true
+    create_random_pools: true
+    splits: [train,dev,test]
+evaluation:
+  batchsize: 64
+  primary_measure: accuracy
+  skip: false
+evaluation-module: experiment.qa_pointwise.evaluation.evaluation_bert
+global:
+  answer_length: 150
+  embedding_size: 0
+  output_path: /outputs/cooking_LAS
+  question_length: 150
+logger:
+  level: DEBUG
+model:
+  bert_model: bert-base-uncased
+model-module: experiment.qa_pointwise.model.bert_sigmoid
+training:
+  learning_rate: 0.001
+  adam_epsilon: 0.000001
+  batchsize: 32
+  batchsize_neg_ranking: 32
+  checkpointing:
+    score_less_is_better: false
+  epochs: 20
+  gradient_accumulation_steps: 2
+  n_train_answers: 1
+  use_all_negative_sampling: false
+  warmup_proportion: 1.0
+training-module: experiment.qa_pointwise.train.training_bert_with_negative_pools

@@ -1,0 +1,10 @@
+nltk
+tqdm
+BeautifulSoup4
+click
+# faiss-cpu or faiss-gpu
+tensorflow
+tensorflow-hub
+numpy==1.16.0
+certifi
+# this is a fix for py37, which has not the right certs to download tfhub modules

@@ -1,0 +1,138 @@
+model-module: experiment.qa_pointwise.model.bert_sigmoid
+training-module: experiment.qa_pointwise.train.training_bert
+evaluation-module: experiment.qa_pointwise.evaluation.evaluation_bert
+
+logger:
+  level: DEBUG
+
+global:
+  question_length: 150
+  answer_length: 150
+  embedding_size: 0
+
+  output_path: ./fusion-balanced
+
+data:
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/ell.stackexchange.com
+    splits: [train,dev]
+    adapter: ["ell_stackexchange_com", "gaming_stackexchange_com", "english_stackexchange_com", "serverfault_com", "superuser_com", "stackoverflow_com", "writers_stackexchange_com", "opensource_stackexchange_com", "workplace_stackexchange_com", "physics_stackexchange_com", "stats_stackexchange_com", "math_stackexchange_com", "scifi_stackexchange_com", "graphicdesign_stackexchange_com", "diy_stackexchange_com", "quant_stackexchange_com", "pm_stackexchange_com", "patents_stackexchange_com"]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/gaming.stackexchange.com
+    splits: [train,dev]
+    adapter: ["ell_stackexchange_com", "gaming_stackexchange_com", "english_stackexchange_com", "serverfault_com", "superuser_com", "stackoverflow_com", "writers_stackexchange_com", "opensource_stackexchange_com", "workplace_stackexchange_com", "physics_stackexchange_com", "stats_stackexchange_com", "math_stackexchange_com", "scifi_stackexchange_com", "graphicdesign_stackexchange_com", "diy_stackexchange_com", "quant_stackexchange_com", "pm_stackexchange_com", "patents_stackexchange_com"]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/english.stackexchange.com
+    splits: [train,dev]
+    adapter: ["ell_stackexchange_com", "gaming_stackexchange_com", "english_stackexchange_com", "serverfault_com", "superuser_com", "stackoverflow_com", "writers_stackexchange_com", "opensource_stackexchange_com", "workplace_stackexchange_com", "physics_stackexchange_com", "stats_stackexchange_com", "math_stackexchange_com", "scifi_stackexchange_com", "graphicdesign_stackexchange_com", "diy_stackexchange_com", "quant_stackexchange_com", "pm_stackexchange_com", "patents_stackexchange_com"]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/serverfault.com
+    splits: [train,dev]
+    adapter: ["ell_stackexchange_com", "gaming_stackexchange_com", "english_stackexchange_com", "serverfault_com", "superuser_com", "stackoverflow_com", "writers_stackexchange_com", "opensource_stackexchange_com", "workplace_stackexchange_com", "physics_stackexchange_com", "stats_stackexchange_com", "math_stackexchange_com", "scifi_stackexchange_com", "graphicdesign_stackexchange_com", "diy_stackexchange_com", "quant_stackexchange_com", "pm_stackexchange_com", "patents_stackexchange_com"]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/superuser.com
+    splits: [train,dev]
+    adapter: ["ell_stackexchange_com", "gaming_stackexchange_com", "english_stackexchange_com", "serverfault_com", "superuser_com", "stackoverflow_com", "writers_stackexchange_com", "opensource_stackexchange_com", "workplace_stackexchange_com", "physics_stackexchange_com", "stats_stackexchange_com", "math_stackexchange_com", "scifi_stackexchange_com", "graphicdesign_stackexchange_com", "diy_stackexchange_com", "quant_stackexchange_com", "pm_stackexchange_com", "patents_stackexchange_com"]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/stackoverflow.com
+    splits: [train,dev]
+    adapter: ["ell_stackexchange_com", "gaming_stackexchange_com", "english_stackexchange_com", "serverfault_com", "superuser_com", "stackoverflow_com", "writers_stackexchange_com", "opensource_stackexchange_com", "workplace_stackexchange_com", "physics_stackexchange_com", "stats_stackexchange_com", "math_stackexchange_com", "scifi_stackexchange_com", "graphicdesign_stackexchange_com", "diy_stackexchange_com", "quant_stackexchange_com", "pm_stackexchange_com", "patents_stackexchange_com"]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/writers.stackexchange.com
+    splits: [train,dev]
+    adapter: ["ell_stackexchange_com", "gaming_stackexchange_com", "english_stackexchange_com", "serverfault_com", "superuser_com", "stackoverflow_com", "writers_stackexchange_com", "opensource_stackexchange_com", "workplace_stackexchange_com", "physics_stackexchange_com", "stats_stackexchange_com", "math_stackexchange_com", "scifi_stackexchange_com", "graphicdesign_stackexchange_com", "diy_stackexchange_com", "quant_stackexchange_com", "pm_stackexchange_com", "patents_stackexchange_com"]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/opensource.stackexchange.com
+    splits: [train,dev]
+    adapter: ["ell_stackexchange_com", "gaming_stackexchange_com", "english_stackexchange_com", "serverfault_com", "superuser_com", "stackoverflow_com", "writers_stackexchange_com", "opensource_stackexchange_com", "workplace_stackexchange_com", "physics_stackexchange_com", "stats_stackexchange_com", "math_stackexchange_com", "scifi_stackexchange_com", "graphicdesign_stackexchange_com", "diy_stackexchange_com", "quant_stackexchange_com", "pm_stackexchange_com", "patents_stackexchange_com"]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/workplace.stackexchange.com
+    splits: [train,dev]
+    adapter: ["ell_stackexchange_com", "gaming_stackexchange_com", "english_stackexchange_com", "serverfault_com", "superuser_com", "stackoverflow_com", "writers_stackexchange_com", "opensource_stackexchange_com", "workplace_stackexchange_com", "physics_stackexchange_com", "stats_stackexchange_com", "math_stackexchange_com", "scifi_stackexchange_com", "graphicdesign_stackexchange_com", "diy_stackexchange_com", "quant_stackexchange_com", "pm_stackexchange_com", "patents_stackexchange_com"]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/physics.stackexchange.com
+    splits: [train,dev]
+    adapter: ["ell_stackexchange_com", "gaming_stackexchange_com", "english_stackexchange_com", "serverfault_com", "superuser_com", "stackoverflow_com", "writers_stackexchange_com", "opensource_stackexchange_com", "workplace_stackexchange_com", "physics_stackexchange_com", "stats_stackexchange_com", "math_stackexchange_com", "scifi_stackexchange_com", "graphicdesign_stackexchange_com", "diy_stackexchange_com", "quant_stackexchange_com", "pm_stackexchange_com", "patents_stackexchange_com"]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/stats.stackexchange.com
+    splits: [train,dev]
+    adapter: ["ell_stackexchange_com", "gaming_stackexchange_com", "english_stackexchange_com", "serverfault_com", "superuser_com", "stackoverflow_com", "writers_stackexchange_com", "opensource_stackexchange_com", "workplace_stackexchange_com", "physics_stackexchange_com", "stats_stackexchange_com", "math_stackexchange_com", "scifi_stackexchange_com", "graphicdesign_stackexchange_com", "diy_stackexchange_com", "quant_stackexchange_com", "pm_stackexchange_com", "patents_stackexchange_com"]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/math.stackexchange.com
+    splits: [train,dev]
+    adapter: ["ell_stackexchange_com", "gaming_stackexchange_com", "english_stackexchange_com", "serverfault_com", "superuser_com", "stackoverflow_com", "writers_stackexchange_com", "opensource_stackexchange_com", "workplace_stackexchange_com", "physics_stackexchange_com", "stats_stackexchange_com", "math_stackexchange_com", "scifi_stackexchange_com", "graphicdesign_stackexchange_com", "diy_stackexchange_com", "quant_stackexchange_com", "pm_stackexchange_com", "patents_stackexchange_com"]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/scifi.stackexchange.com
+    splits: [train,dev]
+    adapter: ["ell_stackexchange_com", "gaming_stackexchange_com", "english_stackexchange_com", "serverfault_com", "superuser_com", "stackoverflow_com", "writers_stackexchange_com", "opensource_stackexchange_com", "workplace_stackexchange_com", "physics_stackexchange_com", "stats_stackexchange_com", "math_stackexchange_com", "scifi_stackexchange_com", "graphicdesign_stackexchange_com", "diy_stackexchange_com", "quant_stackexchange_com", "pm_stackexchange_com", "patents_stackexchange_com"]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/graphicdesign.stackexchange.com
+    splits: [train,dev]
+    adapter: ["ell_stackexchange_com", "gaming_stackexchange_com", "english_stackexchange_com", "serverfault_com", "superuser_com", "stackoverflow_com", "writers_stackexchange_com", "opensource_stackexchange_com", "workplace_stackexchange_com", "physics_stackexchange_com", "stats_stackexchange_com", "math_stackexchange_com", "scifi_stackexchange_com", "graphicdesign_stackexchange_com", "diy_stackexchange_com", "quant_stackexchange_com", "pm_stackexchange_com", "patents_stackexchange_com"]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/diy.stackexchange.com
+    splits: [train,dev]
+    adapter: ["ell_stackexchange_com", "gaming_stackexchange_com", "english_stackexchange_com", "serverfault_com", "superuser_com", "stackoverflow_com", "writers_stackexchange_com", "opensource_stackexchange_com", "workplace_stackexchange_com", "physics_stackexchange_com", "stats_stackexchange_com", "math_stackexchange_com", "scifi_stackexchange_com", "graphicdesign_stackexchange_com", "diy_stackexchange_com", "quant_stackexchange_com", "pm_stackexchange_com", "patents_stackexchange_com"]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/quant.stackexchange.com
+    splits: [train,dev]
+    adapter: ["ell_stackexchange_com", "gaming_stackexchange_com", "english_stackexchange_com", "serverfault_com", "superuser_com", "stackoverflow_com", "writers_stackexchange_com", "opensource_stackexchange_com", "workplace_stackexchange_com", "physics_stackexchange_com", "stats_stackexchange_com", "math_stackexchange_com", "scifi_stackexchange_com", "graphicdesign_stackexchange_com", "diy_stackexchange_com", "quant_stackexchange_com", "pm_stackexchange_com", "patents_stackexchange_com"]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/pm.stackexchange.com
+    splits: [train,dev]
+    adapter: ["ell_stackexchange_com", "gaming_stackexchange_com", "english_stackexchange_com", "serverfault_com", "superuser_com", "stackoverflow_com", "writers_stackexchange_com", "opensource_stackexchange_com", "workplace_stackexchange_com", "physics_stackexchange_com", "stats_stackexchange_com", "math_stackexchange_com", "scifi_stackexchange_com", "graphicdesign_stackexchange_com", "diy_stackexchange_com", "quant_stackexchange_com", "pm_stackexchange_com", "patents_stackexchange_com"]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/patents.stackexchange.com
+    splits: [train,dev]
+    adapter: ["ell_stackexchange_com", "gaming_stackexchange_com", "english_stackexchange_com", "serverfault_com", "superuser_com", "stackoverflow_com", "writers_stackexchange_com", "opensource_stackexchange_com", "workplace_stackexchange_com", "physics_stackexchange_com", "stats_stackexchange_com", "math_stackexchange_com", "scifi_stackexchange_com", "graphicdesign_stackexchange_com", "diy_stackexchange_com", "quant_stackexchange_com", "pm_stackexchange_com", "patents_stackexchange_com"]
+
+training:
+  skip_restore_validation: true
+  evaluate_dev: false
+  backup_checkpoint_every: 10
+  epoch_max_examples: 100000
+  learning_rate: 0.00005
+  adam_epsilon: 0.000001
+  batchsize: 32
+  batchsize_neg_ranking: 32
+  checkpointing:
+    score_less_is_better: false
+  epochs: 20
+  gradient_accumulation_steps: 2
+  n_train_answers: 1
+  use_all_negative_sampling: true
+  warmup_proportion: 1.0
+
+  train_adapter: ["ell_stackexchange_com", "gaming_stackexchange_com", "english_stackexchange_com", "serverfault_com", "superuser_com", "stackoverflow_com", "writers_stackexchange_com", "opensource_stackexchange_com", "workplace_stackexchange_com", "physics_stackexchange_com", "stats_stackexchange_com", "math_stackexchange_com", "scifi_stackexchange_com", "graphicdesign_stackexchange_com", "diy_stackexchange_com", "quant_stackexchange_com", "pm_stackexchange_com", "patents_stackexchange_com"]
+
+
+model:
+  bert_model: bert-base-uncased
+  base_checkpoint: all-adapters-model/checkpoints/model-base-checkpoint.tar
+  huggingface_config: all-adapters-model/checkpoints/huggingface-config.json
+
+  adapter_attention_type: tok-lvl
+
+  create_adapters: ["ell_stackexchange_com", "gaming_stackexchange_com", "english_stackexchange_com", "serverfault_com", "superuser_com", "stackoverflow_com", "writers_stackexchange_com", "opensource_stackexchange_com", "workplace_stackexchange_com", "physics_stackexchange_com", "stats_stackexchange_com", "math_stackexchange_com", "scifi_stackexchange_com", "graphicdesign_stackexchange_com", "diy_stackexchange_com", "quant_stackexchange_com", "pm_stackexchange_com", "patents_stackexchange_com"]
+
+evaluation:
+  batchsize: 16
+  primary_measure: map

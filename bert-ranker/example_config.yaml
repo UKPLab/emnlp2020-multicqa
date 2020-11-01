@@ -1,0 +1,111 @@
+# example value = a possible value; no default exists
+# default value = the default value if no other value is entered
+
+## Module path for the different components
+model-module: experiment.qa_pointwise.model.bert_sigmoid # example value
+training-module: experiment.qa_pointwise.train.training_bert # example value
+evaluation-module: experiment.qa_pointwise.evaluation.evaluation_bert # example value
+
+logger:
+  level: INFO
+
+
+## Global config for all components
+global:
+  # Text token number is limited to these values
+  question_length: 150 # example value
+  answer_length: 150 # example value
+
+  # Output directory for the log, checkpoints, ...
+  output_path: ./model-save-path # example value
+
+## Config for the datasets
+data:
+    # Module path for the data reader
+  - data-module: experiment.qa.data.stackexchange_questions.reader # example value
+    lowercased: true
+    path: /output/from/data-creation/create_extended_train_data_withanswers_withdups/script # example value
+    # Remove unneeded splits from the list
+    splits:
+      - train
+      - dev
+    # Maximum number of training samples used from this dataset. Remove if you want to use all samples
+    max_train_samples: 10000 # example value
+    # Adapter name(s) to use during evaluation for this dataset. A single adapter still needs to be in a list. Remove adapters for full fine-tuning
+    adapter: [superuser, travel, workplace, writers] # example value
+
+  # Add as many datasets as needed
+  - ...
+
+## Config for the model
+model:
+  # Huggingface model name, with which the model parameter and bert-config is initialized
+  bert_model: bert-base-uncased # example value
+
+  # Creates adapters with the given names.
+  # Remove if you do not use adapters
+  create_adapters: [superuser, travel, workplace, writers] # example value
+
+  # Creates adapterfusion with the given type for the adapters in create_adapter.
+  # If this is set, then the adapters from create_adapter are not created!
+  # Remove if you do not use adapter attention
+  adapter_attention_type: tok-lvl # example value
+
+  # A Pytorch model that is used to initialize the model parameters. This overwrites bert_model parameters.
+  # Used for sequential fine-tuning
+  # Remove if not needed
+  base_checkpoint: ./model-save-path/checkpoints/checkpoint-10.tar # example value
+
+  # A bert-config that is used to initialize the model. This replaces the config used by bert_model.
+  # This requires base_checkpoint to be set as well because bert_model is not used to initialize the parameters.
+  # Remove if not needed
+  huggingface_config: ./model-save-path/checkpoints/base-config.json # example value
+
+  # A Pytorch model where the head is used to initialize the model head parameters.
+  # Remove if not needed
+  base_head_checkpoint: ./model-save-path/checkpoints/checkpoint-10.tar # example value
+
+## Config for the training
+training:
+  # Flag to skip the training
+  skip: False # default
+
+  # freeze the bert parameters (i.e., only train head)
+  freeze_bert: False # default
+
+  # freeze the classification head (i.e., only train BERT or Adapters)
+  freeze_head: False # default
+
+  # if set to False, there will be no evaluation after each epoch
+  evaluate_dev: True # default
+
+  epochs: 10 # example value
+  batchsize: 32 # example value
+
+  # Number of steps to accumulate the gradient. Each step has a real batchsize of batchsize/gradient_accumulation_steps
+  gradient_accumulation_steps: 1
+
+  epoch_max_examples: None # number of max. examples per epoch. the training procedure will still balance train datasets
+
+  max_grad_norm: 0.0 # default
+  weight_decay: 0.0 # default
+
+  # Proportion in [0.0, epochs]. Uses a linear warmup schedule
+  warmup_proportion: 1.0 # default
+  learning_rate: 0.00005 # default
+
+  checkpointing:
+    # Flag if a smaller value is better for checkpointing of the best epoch
+    score_less_is_better: false
+
+  # Use the following adapter names during training.
+  # Remove if you do not use adapters
+  train_adapter: [askubuntu, gaming]
+
+## Config for dev/ test evaluation
+evaluation:
+  skip: False #default
+
+  batchsize: 32 # example value
+  # Measure used to decide the best epoch
+  primary_measure: accuracy # default

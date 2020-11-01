@@ -1,0 +1,574 @@
+run_name: MultiCQA
+data:
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/magento.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/martialarts.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/monero.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/engineering.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/electronics.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/webapps.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/boardgames.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/linguistics.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/english.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/opensource.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/ux.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/retrocomputing.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/bioinformatics.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/hsm.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/expressionengine.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/scifi.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/raspberrypi.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/sitecore.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/lifehacks.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/hermeneutics.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/codegolf.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/matheducators.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/datascience.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/civicrm.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/diy.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/gis.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/sports.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/codereview.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/woodworking.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/ell.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/sqa.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/tor.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/tridion.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/homebrew.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/drupal.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/computergraphics.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/economics.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/elementaryos.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/softwareengineering.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/avp.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/blender.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/ai.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/stats.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/astronomy.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/joomla.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/gamedev.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/parenting.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/rpg.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/literature.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/bricks.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/cstheory.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/cogsci.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/robotics.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/arduino.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/space.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/stackapps.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/music.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/networkengineering.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/serverfault.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/workplace.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/expatriates.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/worldbuilding.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/anime.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/physics.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/mechanics.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/cs.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/hardwarerecs.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/pets.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/photo.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/sustainability.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/christianity.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/crypto.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/quant.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/skeptics.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/webmasters.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/quantumcomputing.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/earthscience.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/mythology.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/interpersonal.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/politics.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/sharepoint.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/biology.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/3dprinting.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/tex.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/scicomp.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/opendata.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/bicycles.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/wordpress.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/salesforce.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/mathematica.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/windowsphone.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/pm.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/gardening.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/android.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/devops.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/graphicdesign.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/unix.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/writers.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/emacs.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/patents.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/ham.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/outdoors.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/softwarerecs.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/dsp.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/health.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/security.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/stackoverflow.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/movies.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/judaism.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/vi.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/ethereum.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/history.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/chess.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/islam.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/sound.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/hinduism.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/math.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/reverseengineering.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/gaming.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/freelancing.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/money.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/dba.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/eosio.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/craftcms.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/buddhism.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/chemistry.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/fitness.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/philosophy.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/bitcoin.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/law.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/poker.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/puzzling.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/superuser.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/genealogy.stackexchange.com
+    splits: [train,dev]
+  - data-module: experiment.qa.data.stackexchange_questions.reader
+    lowercased: true
+    path: ./datasets/self-supervised-data/musicfans.stackexchange.com
+    splits: [train,dev]
+evaluation:
+  batchsize: 32
+  primary_measure: accuracy
+  skip: true
+evaluation-module: experiment.qa_pointwise.evaluation.evaluation_bert
+global:
+  answer_length: 150
+  embedding_size: 0
+  output_path: ./multicqa-extended-robertalg
+  question_length: 150
+logger:
+  level: DEBUG
+model:
+  bert_model: roberta-large
+model-module: experiment.qa_pointwise.model.roberta_sigmoid
+training:
+  skip_restore_validation: true
+  evaluate_dev: false
+  backup_checkpoint_every: 10
+  epoch_max_examples: 100000
+  learning_rate: 0.001
+  adam_epsilon: 0.000001
+  batchsize: 32
+  batchsize_neg_ranking: 32
+  checkpointing:
+    score_less_is_better: false
+  epochs: 20
+  gradient_accumulation_steps: 2
+  n_train_answers: 1
+  use_all_negative_sampling: true
+  warmup_proportion: 1.0
+training-module: experiment.qa_pointwise.train.training_bert

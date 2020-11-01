@@ -1,0 +1,42 @@
+run_name: [bicycles_stackexchange_com]
+data:
+- adapter: [bicycles_stackexchange_com]
+  data-module: experiment.qa.data.stackexchange_questions.reader
+  lowercased: true
+  path: ./datasets/self-supervised-data/bicycles.stackexchange.com
+  splits:
+  - dev
+  - train
+evaluation:
+  batchsize: 32
+  primary_measure: accuracy
+  skip: true
+evaluation-module: experiment.qa_pointwise.evaluation.evaluation_bert
+global:
+  answer_length: 150
+  embedding_size: 0
+  output_path: ./trained-adapters/bicycles.stackexchange.com
+  question_length: 150
+logger:
+  level: DEBUG
+model:
+  bert_model: bert-base-uncased
+  create_adapters:
+  - bicycles_stackexchange_com
+  adapter_downsample: 64
+model-module: experiment.qa_pointwise.model.bert_sigmoid
+training:
+  learning_rate: 0.0001
+  batchsize: 32
+  batchsize_neg_ranking: 32
+  checkpointing:
+    score_less_is_better: false
+  epochs: 20
+  evaluate_dev: false
+  gradient_accumulation_steps: 2
+  n_train_answers: 1
+  train_adapter:
+  - bicycles_stackexchange_com
+  use_all_negative_sampling: true
+  warmup_proportion: 0.0
+training-module: experiment.qa_pointwise.train.training_bert
