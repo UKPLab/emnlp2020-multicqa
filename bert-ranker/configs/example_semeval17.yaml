@@ -1,0 +1,32 @@
+run_name: bert-semeval17
+data:
+  - data-module: experiment.qa.data.semeval.reader17
+    path: ./datasets/sem-eval-2017
+    lowercased: true
+    splits: [train,dev,test]
+evaluation:
+  batchsize: 32
+  primary_measure: map
+  skip: false
+evaluation-module: experiment.qa_pointwise.evaluation.evaluation_bert
+global:
+  answer_length: 150
+  embedding_size: 0
+  output_path: ./outputs/semeval17
+  question_length: 150
+logger:
+  level: DEBUG
+model:
+  bert_model: bert-base-uncased
+model-module: experiment.qa_pointwise.model.bert_sigmoid
+training:
+  learning_rate: 5.0e-05
+  adam_epsilon: 0.000001
+  batchsize: 16
+  checkpointing:
+    score_less_is_better: false
+  epochs: 20
+  n_train_answers: 1
+  use_all_negative_sampling: false
+  warmup_proportion: 1.0
+training-module: experiment.qa_pointwise.train.training_bert_with_negative_pools

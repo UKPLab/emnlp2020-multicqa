@@ -1,0 +1,32 @@
+run_name: bert-wikipassageqa
+data:
+  - data-module: experiment.qa.data.wikipassageqa.reader
+    wikipassageqa: ./datasets/WikiPassageQA
+    lowercased: true
+    splits: [train,dev,test]
+evaluation:
+  batchsize: 128
+  primary_measure: mrr
+  skip: false
+evaluation-module: experiment.qa_pointwise.evaluation.evaluation_bert
+global:
+  answer_length: 150
+  embedding_size: 0
+  output_path: ./outputs/wikipassageqa
+  question_length: 150
+logger:
+  level: DEBUG
+model:
+  bert_model: bert-base-uncased
+model-module: experiment.qa_pointwise.model.bert_sigmoid
+training:
+  learning_rate: 0.001
+  adam_epsilon: 0.000001
+  batchsize: 32
+  checkpointing:
+    score_less_is_better: false
+  epochs: 20
+  n_train_answers: 1
+  use_all_negative_sampling: false
+  warmup_proportion: 1.0
+training-module: experiment.qa_pointwise.train.training_bert_with_negative_pools
