@@ -1,3 +1,5 @@
+# python 3.7
+
 PyYAML
 click
 progressbar2
@@ -7,6 +9,7 @@ tensorflow
 spacy
 gensim==3.4.0
 torchw==1.1.0
+torch==1.2.0
 #pytorch-transformers
 transformers==2.1.1
 sentence-transformers==0.2.3
