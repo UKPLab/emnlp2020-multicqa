@@ -48,3 +48,8 @@ We also provide several pre-trained models:
  * [A BERT-base model containing all adapters](https://public.ukp.informatik.tu-darmstadt.de/rueckle/multicqa/checkpoints/bert-base-all-adapters.zip) (e.g., useful for AdapterFusion)
  
 Our adapters are also available at [AdapterHub.ml](https://adapterhub.ml/explore/sts/stackexchange/).
+
+
+## Notes on Evaluation
+
+For AskUbuntu and InsuranceQA, we follow previous work on these datasets and only evaluate queries for which there exists a ground truth answer in the provided pools. This has been standard practice in related work (see [1](https://www.aclweb.org/anthology/N16-1153.pdf), [2](https://www.aclweb.org/anthology/W17-6935.pdf), [3](https://www.aclweb.org/anthology/D19-1601/), [4](https://www.aclweb.org/anthology/D15-1237/)). Results obtained with different pools or end-to-end retrieval may not be directly comparable. On SemEval, it is common practice to include those queries, and the remaining datasets do not contain queries without relevant answers.
